@@ -1,6 +1,6 @@
+src
 dist
 package-lock.json
-node_modules
 .cache
 .DS_Store
 build
