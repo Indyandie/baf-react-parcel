@@ -1,0 +1,14 @@
+{
+   "name": "baf-react-parcel",
+   "version": "1.0.3",
+   "description": "",
+   "bin": {
+      "barp": "./brp.js"
+   },
+   "keywords": ["parcel", "react", "cli", "basic"],
+   "author": "Andy Contreras",
+   "license": "ISC",
+   "dependencies": {
+      "chalk": "^4.1.0"
+   }
+}
