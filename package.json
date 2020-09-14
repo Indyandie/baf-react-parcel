@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.0",
     "parcel": "^2.0.0-nightly.398",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
