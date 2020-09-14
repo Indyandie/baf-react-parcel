@@ -1,31 +1,68 @@
 #!/usr/bin/env node
 
-const { exec, spawn } = require('child_process')
+const { spawn } = require('child_process')
+const chalk = require('chalk')
+const { dir } = require('console')
 
 const brp = 'git@github.com:Indyandie/baf-react-parcel.git'
 const dirname = process.argv[2] || 'barp'
 
-const clone = spawn('git', ['clone', brp, dirname])
-
-clone.stdout.on('data', data => {
-   console.log(`stdout:\n${data}`)
-})
-
-clone.stderr.on('data', data => {
-   console.error(`stderr: ${data}`)
-})
-
-clone.on('error', (error) => {
-   console.error(`error: ${error.message}`);
-})
-
-clone.on('close', (code) => {
-   console.log(`child process exited with code ${code}`);
-})
-
-// exec(`git clone ${brp} hello` , (err, sto, ste) => {
-//    if(err) console.error(err)
+const spawner = (cmd, args=[], exit) => {
+   const cmdName = `${cmd} ${args.length > 0 ? args[0] : ''}`
    
-//    if(sto) console.log(sto)
-//    if(ste) console.error(ste )
-// })
+   let spawny = ''
+
+   if(args)  spawny = spawn(cmd, args)
+   else spawny = spawn(cmd)
+
+   spawny.stdout.on('data', data => {
+      console.log(chalk.green(`${data}`))
+   })
+
+   spawny.stderr.on('data', data => {
+      console.error(chalk.blue.bold(`${data}`))
+   })
+
+   spawny.on('error', (error) => {
+      console.error(chalk.red(`${error}`))
+   })
+
+   spawny.on('close', (code) => {
+      console.log(chalk.green.bold(`✅ ${cmdName}`))
+      console.log(`${'='.repeat(64)} \n`)
+      if(exit) exit()
+   })
+
+   return spawny
+}
+
+const barp = async () => {
+   console.log(chalk.white.bold('\nInstalling baf-react-parcel'))
+   console.log('hold tight this could take a few minutes\n')
+   console.log('🐙🧬🐙')
+   spawner('git', ['clone', brp, dirname], 
+      () => {
+         process.chdir(dirname)
+         console.log('📦 installing packages...')
+         spawner('npm', ['i'], () => {
+            console.log(chalk.yellow.bold('Great success! 🎉\n'))
+            console.log('Don\'t forget to switch directory.')
+            console.log('run:', chalk.white.bold(`cd ${dirname}`))
+         })
+      }
+   )
+}
+
+// Check if file exist
+const list = spawn('ls')
+let isDuplicate = false
+
+list.stdout.on('data', data => {
+   const files = new Set(`${data}`.split('\n'))
+   isDuplicate = files.has(dirname)
+})
+
+list.on('close', (code) => {
+   if(!isDuplicate) barp()
+   else console.log(chalk.red(`\nThe directory <${chalk.bold(dirname)}> is in use.\n`), chalk.blueBright('🤖 Try a different name.'))
+})
