@@ -1,17 +1,16 @@
 {
-  "name": "baf-react-parcel",
+  "name": "baf-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel serve src/index.html --open",
+    "start": "parcel serve src/index.html",
     "build": "rm -rf build && parcel build --no-source-maps src/index.html -d build"
   },
   "keywords": [],
-  "author": "Andy Contreras",
+  "author": "your-name",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.0",
     "parcel": "next",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
