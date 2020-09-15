@@ -44,7 +44,7 @@ const barp = async () => {
       () => {
          process.chdir(dirname)
          console.log('📦 installing packages...')
-         spawner(rm, ['-rf', '.npmignore', '.gitignore', 'cli'])
+         spawner('rm', ['-rf', '.npmignore', '.gitignore', 'cli'])
          spawner('npm', ['i'], () => {
             console.log(chalk.yellow.bold('Great success! 🎉\n'))
             console.log('Don\'t forget to switch directory.')
