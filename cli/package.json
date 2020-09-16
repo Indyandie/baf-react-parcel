@@ -1,7 +1,7 @@
 {
    "name": "baf-react-parcel",
-   "version": "1.0.11",
-   "description": "",
+   "version": "1.0.12",
+   "description": "Super basic react template using parcel.",
    "bin": {
       "barp": "./brp.js"
    },
@@ -10,5 +10,10 @@
    "license": "ISC",
    "dependencies": {
       "chalk": "^4.1.0"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/Indyandie/baf-react-parcel",
+      "directory": "cli"
    }
 }
