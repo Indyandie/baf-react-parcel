@@ -11,11 +11,11 @@
   "author": "your-name",
   "license": "ISC",
   "dependencies": {
-    "parcel": "next",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "parcel": "next",
     "less": "^3.12.2"
   }
 }
