@@ -2,7 +2,6 @@
 
 const { spawn } = require('child_process')
 const chalk = require('chalk')
-const { dir } = require('console')
 
 const brp = 'git@github.com:Indyandie/baf-react-parcel.git'
 const dirname = process.argv[2] || 'barp'
@@ -44,7 +43,13 @@ const barp = async () => {
       () => {
          process.chdir(dirname)
          console.log('📦 installing packages...')
-         spawner('rm', ['-rf', '.npmignore', 'cli', '.git'], () => spawner('git', ['init']))
+         spawner('rm', ['-rf', '.npmignore', 'cli', '.git'], 
+            () => {
+               spawner('git', ['init'])
+               spawner('git', ['add', '.'])
+               spawner('git', ['commit', '-m', '"init"'])
+            }
+         )
          spawner('npm', ['i'], () => {
             console.log(chalk.yellow.bold('Great success! 🎉\n'))
             console.log('Don\'t forget to switch directory.')
