@@ -47,7 +47,7 @@ const barp = async () => {
             () => {
                spawner('git', ['init'], 
                   () => spawner('git', ['add', '.'], 
-                     spawner('git', ['commit', '-m', '"init"'])
+                     () => spawner('git', ['commit', '-m', '"init"'])
                   )
                )
             }

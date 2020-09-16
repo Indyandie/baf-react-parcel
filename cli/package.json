@@ -1,6 +1,6 @@
 {
    "name": "baf-react-parcel",
-   "version": "1.0.10",
+   "version": "1.0.11",
    "description": "",
    "bin": {
       "barp": "./brp.js"
