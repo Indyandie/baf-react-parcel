@@ -21,7 +21,7 @@ Run
    barp # will clone and intall in /barp if it doesn't already exist
 ```
 
-Use custom name
+## Use custom name
 ```bash
    barp <dir-name>
 ```
