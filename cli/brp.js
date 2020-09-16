@@ -45,9 +45,11 @@ const barp = async () => {
          console.log('📦 installing packages...')
          spawner('rm', ['-rf', '.npmignore', 'cli', '.git'], 
             () => {
-               spawner('git', ['init'])
-               spawner('git', ['add', '.'])
-               spawner('git', ['commit', '-m', '"init"'])
+               spawner('git', ['init'], 
+                  () => spawner('git', ['add', '.'], 
+                     spawner('git', ['commit', '-m', '"init"'])
+                  )
+               )
             }
          )
          spawner('npm', ['i'], () => {
