@@ -1,6 +1,6 @@
 {
    "name": "baf-react-parcel",
-   "version": "1.0.12",
+   "version": "1.0.13",
    "description": "Super basic react template using parcel.",
    "bin": {
       "barp": "./brp.js"
