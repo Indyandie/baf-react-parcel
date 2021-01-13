@@ -7,15 +7,19 @@
     "start": "parcel serve src/index.html",
     "build": "rm -rf build && parcel build --no-source-maps src/index.html -d build"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "parcel",
+    "basic"
+  ],
   "author": "your-name",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
-    "parcel": "next",
-    "less": "^3.12.2"
+    "less": "^3.13.1",
+    "parcel": "next"
   }
 }

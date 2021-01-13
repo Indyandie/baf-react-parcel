@@ -1,19 +1,24 @@
 {
-   "name": "baf-react-parcel",
-   "version": "1.0.13",
-   "description": "Super basic react template using parcel.",
-   "bin": {
-      "barp": "./brp.js"
-   },
-   "keywords": ["parcel", "react", "cli", "basic"],
-   "author": "Andy Contreras",
-   "license": "ISC",
-   "dependencies": {
-      "chalk": "^4.1.0"
-   },
-   "repository": {
-      "type": "git",
-      "url": "https://github.com/Indyandie/baf-react-parcel",
-      "directory": "cli"
-   }
+  "name": "baf-react-parcel",
+  "version": "1.0.13",
+  "description": "Super basic react template using parcel.",
+  "bin": {
+    "barp": "./brp.js"
+  },
+  "keywords": [
+    "parcel",
+    "react",
+    "cli",
+    "basic"
+  ],
+  "author": "Andy Contreras",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Indyandie/baf-react-parcel",
+    "directory": "cli"
+  }
 }
